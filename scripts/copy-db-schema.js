@@ -5,7 +5,8 @@ const path = require('path');
 function getDatabase() {
   const type =
     process.env.DATABASE_TYPE ||
-    (process.env.DATABASE_URL && process.env.DATABASE_URL.split(':')[0]);
+    (process.env.DATABASE_URL && process.env.DATABASE_URL.split(':')[0]) ||
+    'mysql';
 
   if (type === 'postgres') {
     return 'postgresql';
