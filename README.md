@@ -1,4 +1,12 @@
-# umami
+# Umami
+
+> forked from Umami[https://umami.is/docs/](https://umami.is/docs/]
+> 
+> changes:
+> 
+> 1. mysql5.7 support
+> 2. session add [region, city, ip] fields
+
 
 Umami is a simple, fast, website analytics alternative to Google Analytics.
 
