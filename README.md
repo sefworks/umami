@@ -1,7 +1,5 @@
 # Umami
 
-> forked from Umami[https://umami.is/docs/](https://umami.is/docs/]
-> 
 > changes:
 > 
 > 1. mysql5.7 support
@@ -24,7 +22,7 @@ A detailed getting started guide can be found at [https://umami.is/docs/](https:
 ### Get the source code and install packages
 
 ```
-git clone https://github.com/mikecao/umami.git
+git clone https://github.com/sefworks/umami.git
 cd umami
 npm install
 ```
@@ -92,12 +90,12 @@ docker-compose up
 
 Alternatively, to pull just the Umami Docker image with PostgreSQL support:
 ```bash
-docker pull ghcr.io/mikecao/umami:postgresql-latest
+docker pull ghcr.io/sefworks/umami:postgresql-latest
 ```
 
 Or with MySQL support:
 ```bash
-docker pull ghcr.io/mikecao/umami:mysql-latest
+docker pull ghcr.io/sefworks/umami:mysql-latest
 ```
 
 ## Getting updates
