@@ -78,7 +78,6 @@ CREATE TABLE `session` (
   `ip` varchar(35) DEFAULT NULL,
   PRIMARY KEY (`session_id`),
   UNIQUE KEY `session_uuid` (`session_uuid`),
-  UNIQUE KEY `session_pk` (`country`),
   KEY `session_created_at_idx` (`created_at`),
   KEY `session_website_id_idx` (`website_id`),
   CONSTRAINT `session_ibfk_1` FOREIGN KEY (`website_id`) REFERENCES `website` (`website_id`) ON DELETE CASCADE
