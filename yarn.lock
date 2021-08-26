@@ -1021,6 +1021,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@7.14.8":
+  version "7.14.8"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
+  integrity sha512-twj3L8Og5SaCRCErB4x4ajbvBIVV77CGeFglHpeg5WC5FF8TZzBWXtTJ4MqaD9QszLYTtr+IsaAL2rEUevb+eg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.8.4":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
@@ -1854,6 +1861,13 @@
   dependencies:
     "@typescript-eslint/types" "4.28.3"
     eslint-visitor-keys "^2.0.0"
+
+"@uiw/react-amap@^1.8.8":
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/@uiw/react-amap/-/react-amap-1.8.8.tgz#3d9f7b51aae46b31141c6a5726eb2579e0292900"
+  integrity sha512-29K+0zDcCQseqdn3sBCLtyPxWHQ//zHR01GjcXTgat88ruy2UBI7RGqyWMctQFZf20SqGE7B8Cg/LlgW2tRGZQ==
+  dependencies:
+    "@babel/runtime" "7.14.8"
 
 "@vue/compiler-core@3.0.11", "@vue/compiler-core@^3.0.0":
   version "3.0.11"

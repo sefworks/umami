@@ -62,6 +62,7 @@
     "@fontsource/noto-sans-tc": "^4.5.0",
     "@prisma/client": "2.27.0",
     "@reduxjs/toolkit": "^1.6.1",
+    "@uiw/react-amap": "^1.8.8",
     "bcryptjs": "^2.4.3",
     "chalk": "^4.1.1",
     "chart.js": "^2.9.4",

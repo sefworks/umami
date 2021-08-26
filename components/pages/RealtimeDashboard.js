@@ -8,6 +8,7 @@ import RealtimeChart from 'components/metrics/RealtimeChart';
 import RealtimeLog from 'components/metrics/RealtimeLog';
 import RealtimeHeader from 'components/metrics/RealtimeHeader';
 import WorldMap from 'components/common/WorldMap';
+import ChinaMap from 'components/common/ChinaMap';
 import DataTable from 'components/metrics/DataTable';
 import RealtimeViews from 'components/metrics/RealtimeViews';
 import useFetch from 'hooks/useFetch';
@@ -149,7 +150,8 @@ export default function RealtimeDashboard() {
             />
           </GridColumn>
           <GridColumn xs={12} lg={8}>
-            <WorldMap data={countries} />
+            {/* <WorldMap data={countries} /> */}
+            <ChinaMap />
           </GridColumn>
         </GridRow>
       </GridLayout>
