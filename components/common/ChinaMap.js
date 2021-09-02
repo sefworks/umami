@@ -2,7 +2,8 @@ import ReactDOM from 'react-dom';
 import React, { useState, useRef } from 'react';
 import { Map, APILoader, Marker } from '@uiw/react-amap';
 
-const Example = () => {
+const Example = (props) => {
+  console.log(props);
   const [show, setShow] = useState(true);
   var SOC = 'CHN';
   var colors = {};
@@ -134,10 +135,15 @@ const Example = () => {
 };
 
 export default class ChinaMap extends React.Component {
+  constructor(props) {
+    console.log(props);
+    super(props);
+  }
   render() {
+    const { data } = this.props;
     return (
       <APILoader akay="a7a90e05a37d3f6bf76d4a9032fc9129">
-        <Example />
+        <Example data={data} />
       </APILoader>
     );
   }

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import WebsiteChart from 'components/metrics/WebsiteChart';
-import WorldMap from 'components/common/WorldMap';
+// import WorldMap from 'components/common/WorldMap';
+import ChinaMap from 'components/common/ChinaMap';
 import Page from 'components/layout/Page';
 import GridLayout, { GridRow, GridColumn } from 'components/layout/GridLayout';
 import MenuLayout from 'components/layout/MenuLayout';
@@ -124,6 +125,14 @@ export default function WebsiteDetails({ websiteId }) {
       {chartLoaded && !view && (
         <GridLayout>
           <GridRow>
+            <GridColumn xs={12} md={12} lg={8}>
+              <ChinaMap data={countryData} />
+            </GridColumn>
+            <GridColumn xs={12} md={12} lg={4}>
+              <CountriesTable {...tableProps} onDataLoad={setCountryData} />
+            </GridColumn>
+          </GridRow>
+          <GridRow>
             <GridColumn md={12} lg={6}>
               <PagesTable {...tableProps} />
             </GridColumn>
@@ -140,14 +149,6 @@ export default function WebsiteDetails({ websiteId }) {
             </GridColumn>
             <GridColumn md={12} lg={4}>
               <DevicesTable {...tableProps} />
-            </GridColumn>
-          </GridRow>
-          <GridRow>
-            <GridColumn xs={12} md={12} lg={8}>
-              <WorldMap data={countryData} />
-            </GridColumn>
-            <GridColumn xs={12} md={12} lg={4}>
-              <CountriesTable {...tableProps} onDataLoad={setCountryData} />
             </GridColumn>
           </GridRow>
           <GridRow className={classNames({ [styles.hidden]: !eventsData?.length > 0 })}>

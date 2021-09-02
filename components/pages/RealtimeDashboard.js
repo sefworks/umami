@@ -7,7 +7,7 @@ import GridLayout, { GridRow, GridColumn } from 'components/layout/GridLayout';
 import RealtimeChart from 'components/metrics/RealtimeChart';
 import RealtimeLog from 'components/metrics/RealtimeLog';
 import RealtimeHeader from 'components/metrics/RealtimeHeader';
-import WorldMap from 'components/common/WorldMap';
+// import WorldMap from 'components/common/WorldMap';
 import ChinaMap from 'components/common/ChinaMap';
 import DataTable from 'components/metrics/DataTable';
 import RealtimeViews from 'components/metrics/RealtimeViews';
@@ -133,14 +133,6 @@ export default function RealtimeDashboard() {
       <GridLayout>
         <GridRow>
           <GridColumn xs={12} lg={4}>
-            <RealtimeViews websiteId={websiteId} data={realtimeData} websites={websites} />
-          </GridColumn>
-          <GridColumn xs={12} lg={8}>
-            <RealtimeLog websiteId={websiteId} data={realtimeData} websites={websites} />
-          </GridColumn>
-        </GridRow>
-        <GridRow>
-          <GridColumn xs={12} lg={4}>
             <DataTable
               title={<FormattedMessage id="metrics.countries" defaultMessage="Countries" />}
               metric={<FormattedMessage id="metrics.visitors" defaultMessage="Visitors" />}
@@ -151,7 +143,15 @@ export default function RealtimeDashboard() {
           </GridColumn>
           <GridColumn xs={12} lg={8}>
             {/* <WorldMap data={countries} /> */}
-            <ChinaMap />
+            <ChinaMap data={countries} />
+          </GridColumn>
+        </GridRow>
+        <GridRow>
+          <GridColumn xs={12} lg={4}>
+            <RealtimeViews websiteId={websiteId} data={realtimeData} websites={websites} />
+          </GridColumn>
+          <GridColumn xs={12} lg={8}>
+            <RealtimeLog websiteId={websiteId} data={realtimeData} websites={websites} />
           </GridColumn>
         </GridRow>
       </GridLayout>

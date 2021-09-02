@@ -92,6 +92,15 @@ html {
     max-width: 1140px;
   }
 }
+@media (min-width: 1560px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1500px;
+  }
+}
 
 .row {
   display: -ms-flexbox;
