@@ -7,7 +7,7 @@ const tar = require('tar');
 
 let url =
   // 'https://raw.githubusercontent.com/GitSquared/node-geolite2-redist/master/redist/GeoLite2-City.tar.gz';
-  'https://blocks.oss-cn-shanghai.aliyuncs.com/tmp/GeoLite2-City.tar.gz?OSSAccessKeyId=LTAISpzvlSeWvi6J&Expires=1988760265&Signature=s5REoaRFKxL2zSTzLVTbK5%2FnwC0%3D';
+  'https://blocks.oss-cn-shanghai.aliyuncs.com/tmp/GeoLite2-City.tar.gz?OSSAccessKeyId=LTAISpzvlSeWvi6J&Expires=1990554103&Signature=viBT6BzRIejdGZ5Jsw5YAAoZLoo%3D';
 
 if (process.env.MAXMIND_LICENSE_KEY) {
   url =

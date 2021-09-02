@@ -2,7 +2,7 @@ import { getPageviewMetrics, getSessionMetrics, getWebsiteById } from 'lib/queri
 import { ok, methodNotAllowed, unauthorized, badRequest } from 'lib/response';
 import { allowQuery } from 'lib/auth';
 
-const sessionColumns = ['browser', 'os', 'device', 'country'];
+const sessionColumns = ['browser', 'os', 'device', 'country', 'region', 'city'];
 const pageviewColumns = ['url', 'referrer'];
 
 function getTable(type) {
@@ -37,6 +37,7 @@ export default async (req, res) => {
     const endDate = new Date(+end_at);
 
     if (sessionColumns.includes(type)) {
+      console.log('type', type);
       const data = await getSessionMetrics(websiteId, startDate, endDate, type, { url });
 
       return ok(res, data);
