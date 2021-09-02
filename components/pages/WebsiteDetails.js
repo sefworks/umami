@@ -94,7 +94,6 @@ export default function WebsiteDetails({ websiteId }) {
     websiteDomain: data?.domain,
     limit: 10,
   };
-
   const DetailsComponent = views[view];
 
   function handleDataLoad() {

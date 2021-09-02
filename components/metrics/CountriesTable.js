@@ -21,7 +21,7 @@ export default function CountriesTable({ websiteId, onDataLoad, ...props }) {
     <MetricsTable
       {...props}
       title={<FormattedMessage id="metrics.countries" defaultMessage="Countries" />}
-      type="country"
+      type="region"
       metric={<FormattedMessage id="metrics.visitors" defaultMessage="Visitors" />}
       websiteId={websiteId}
       onDataLoad={data => onDataLoad?.(percentFilter(data))}

@@ -33,7 +33,6 @@ export default function MetricsTable({
     router,
     query: { url },
   } = usePageQuery();
-
   const { data, loading, error } = useFetch(
     `/api/website/${websiteId}/metrics`,
     {
@@ -60,7 +59,6 @@ export default function MetricsTable({
     }
     return [];
   }, [data, error, dataFilter, filterOptions]);
-
   return (
     <div className={classNames(styles.container, className)}>
       {!data && loading && <Loading />}

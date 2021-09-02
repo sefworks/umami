@@ -1,64 +1,37 @@
 import ReactDOM from 'react-dom';
 import React, { useState, useRef } from 'react';
 import { Map, APILoader, Marker } from '@uiw/react-amap';
+import { CHINA_REGION } from 'lib/china'
 
 const Example = (props) => {
-  console.log(props);
-  const [show, setShow] = useState(true);
-  var SOC = 'CHN';
-  var colors = {};
-  var GDPSpeed = {
-    520000: 10, //贵州
-    540000: 1.0, //西藏
-    530000: 8.5, //云南
-    500000: 8.5, //重庆
-    360000: 8.5, //江西
-    340000: 5.0, //安徽
-    510000: 7.5, //四川
-    350000: 8.5, //福建
-    430000: 8.0, //湖南
-    420000: 7.5, //湖北
-    410000: 7.5, //河南
-    330000: 7.0, //浙江
-    640000: 7.5, //宁夏
-    650000: 5.0, //新疆
-    440000: 7.0, //广东
-    370000: 7.0, //山东
-    450000: 7.3, //广西
-    630000: 7.0, //青海
-    320000: 3.0, //江苏
-    140000: 6.5, //山西
-    460000: 2, // 海南
-    310000: 6.5, //上海
-    110000: 6.5, // 北京
-    130000: 6.5, // 河北
-    230000: 0, // 黑龙江
-    220000: 6, // 吉林
-    210000: 6.5, //辽宁
-    150000: 6.5, //内蒙古
-    120000: 5, // 天津
-    620000: 6, // 甘肃
-    610000: 8.5, // 甘肃
-    710000: 2.64, //台湾
-    810000: 3.0, //香港
-    820000: 0, //澳门
-  };
-  var getColorByDGP = function (adcode) {
+  let propsData = props.data;
+  let GDPSpeed = {};
+  CHINA_REGION.map(region => {
+    GDPSpeed[region.code] = 0;
+    propsData && propsData.map(data => {
+      if (data.x === region.ename) {
+        GDPSpeed[region.code] = (data.z/10).toFixed(1)
+      }
+    })
+    region.ename
+  });
+  let colors = {};
+  let getColorByDGP = function (adcode) {
     if (!colors[adcode]) {
-      var gdp = GDPSpeed[adcode];
+      let gdp = GDPSpeed[adcode];
       if (!gdp) {
         colors[adcode] = 'rgb(227,227,227)';
       } else {
-        var r = 3;
-        var g = 140;
-        var b = 230;
-        var a = gdp / 10;
+        let r = 3;
+        let g = 140;
+        let b = 230;
+        let a = gdp / 10;
         colors[adcode] = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
       }
     }
     return colors[adcode];
   };
-  var disCountry = new AMap.DistrictLayer.Country({
+  let disCountry = new AMap.DistrictLayer.Country({
     zIndex: 10,
     SOC: 'CHN',
     depth: 1,
@@ -71,7 +44,7 @@ const Example = (props) => {
       },
     },
   });
-  var LabelsData = [
+  let LabelsData = [
     {"name":"","position":["113.280637","23.125178"],"zooms":[4,13],"zIndex":1,"opacity":1,"text":{"content":"广东","direction":"center","offset":[0,0],"zooms":[3,20],"style":{"fontSize":10,"fontWeight":"normal","fillColor":"#eee","strokeColor":"#88f","strokeWidth":2}}},
     {"name":"","position":["113.665412","34.757975"],"zooms":[4,13],"zIndex":1,"opacity":1,"text":{"content":"河南","direction":"center","offset":[0,0],"zooms":[3,20],"style":{"fontSize":10,"fontWeight":"normal","fillColor":"#eee","strokeColor":"#88f","strokeWidth":2}}},
     {"name":"","position":["111.670801","40.818311"],"zooms":[4,13],"zIndex":1,"opacity":1,"text":{"content":"内蒙古","direction":"top","offset":[0,0],"zooms":[3,20],"style":{"fontSize":10,"fontWeight":"normal","fillColor":"#eee","strokeColor":"#88f","strokeWidth":2}}},
@@ -107,14 +80,14 @@ const Example = (props) => {
     {"name":"","position":["116.405285","39.904989"],"zooms":[4,13],"zIndex":1,"opacity":1,"text":{"content":"北京","direction":"top","offset":[0,0],"zooms":[3,20],"style":{"fontSize":10,"fontWeight":"normal","fillColor":"#eee","strokeColor":"#88f","strokeWidth":2}}},
     {"name":"","position":["112.549248","37.857014"],"zooms":[4,13],"zIndex":1,"opacity":1,"text":{"content":"山西","direction":"center","offset":[0,0],"zooms":[3,20],"style":{"fontSize":10,"fontWeight":"normal","fillColor":"#eee","strokeColor":"#88f","strokeWidth":2}}}
   ]
-  var layer = new AMap.LabelsLayer({
+  let layer = new AMap.LabelsLayer({
     // 开启标注避让，默认为开启，v1.4.15 新增属性
     collision: false,
     // 开启标注淡入动画，默认为开启，v1.4.15 新增属性
     animation: true,
   });
-  for (var i = 0; i < LabelsData.length; i++) {
-    var labelsMarker = new AMap.LabelMarker(LabelsData[i]);
+  for (let i = 0; i < LabelsData.length; i++) {
+    let labelsMarker = new AMap.LabelMarker(LabelsData[i]);
     layer.add(labelsMarker);
   }
   return (
