@@ -34,7 +34,12 @@
   padding-top: 30px;
 }
 
+.mapbox-wrapper {
+  height: 600px;
+  overflow: hidden;
+}
+
 .mapbox {
-  max-height: 500px;
+  max-height: 600px;
   overflow: hidden;
 }

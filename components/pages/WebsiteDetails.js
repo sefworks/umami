@@ -123,7 +123,7 @@ export default function WebsiteDetails({ websiteId }) {
       {!chartLoaded && <Loading />}
       {chartLoaded && !view && (
         <GridLayout>
-          <GridRow>
+          <GridRow className={styles['mapbox-wrapper']}>
             <GridColumn xs={12} md={12} lg={8} className={styles.mapbox}>
               <ChinaMap data={countryData} />
             </GridColumn>

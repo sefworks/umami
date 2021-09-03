@@ -62,7 +62,7 @@ const Example = props => {
         zoom={4}
         isHotspot={true}
         layers={[disCountry, layer]}
-        center={[106.122082, 38.719192]}
+        center={[106.122082, 36.719192]}
       ></Map>
     </div>
   );
@@ -74,9 +74,6 @@ export default class ChinaMap extends React.Component {
   }
   render() {
     const { data } = this.props;
-    setTimeout(() => {
-      console.log(1111)
-    }, 2000);
     return (
       <APILoader akay="b287a307b9677562290b52743b4ab624">
         <Example data={data} />
