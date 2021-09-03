@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-13 09:29:46
+ * @LastEditTime: 2021-09-03 13:27:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \umami\components\layout\Header.js
+ */
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'react-redux';
@@ -33,7 +41,7 @@ export default function Header() {
           <div className="">
             <div className={styles.title}>
               <Icon icon={<Logo />} size="large" className={styles.logo} />
-              <Link href={user ? '/' : 'https://umami.is'}>umami</Link>
+              {/* <Link href={user ? '/' : 'https://umami.is'}>umami</Link> */}
             </div>
           </div>
           <Button
@@ -60,7 +68,7 @@ export default function Header() {
             <div className={active ? classNames(styles.active) : ''}>
               <div className={styles.buttons}>
                 <ThemeButton />
-                <LanguageButton menuAlign="right" />
+                {/* <LanguageButton menuAlign="right" /> */}
                 {user && <UserButton />}
               </div>
             </div>

@@ -16,10 +16,12 @@ export default function Layout({ title, children, header = true, footer = true }
       </Head>
 
       {header && <Header />}
+      <div style={{height: '50px'}}></div>
       <main className="container" dir={dir}>
         {children}
       </main>
-      {footer && <Footer />}
+      <div style={{height: '50px'}}></div>
+      {/* {footer && <Footer />} */}
       <div id="__modals" dir={dir} />
     </>
   );
