@@ -16,7 +16,6 @@ export default function Layout({ title, children, header = true, footer = true }
       </Head>
 
       {header && <Header />}
-      <div style={{height: '50px'}}></div>
       <main className="container" dir={dir}>
         {children}
       </main>
