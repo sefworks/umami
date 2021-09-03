@@ -69,7 +69,7 @@ export default function MetricsTable({
           <Link
             icon={<Arrow />}
             href={router.pathname}
-            as={resolve({ view: type })}
+            as={resolve({ view: type === 'region' ? 'country' : type })}
             size="small"
             iconRight
           >

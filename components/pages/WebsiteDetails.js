@@ -46,7 +46,7 @@ export default function WebsiteDetails({ websiteId }) {
     resolve,
     query: { view },
   } = usePageQuery();
-
+  
   const BackButton = () => (
     <div key="back-button" className={styles.backButton}>
       <Link key="back-button" href={resolve({ view: undefined })} icon={<Arrow />} size="small">
@@ -117,14 +117,14 @@ export default function WebsiteDetails({ websiteId }) {
             onDataLoad={handleDataLoad}
             showLink={false}
             stickyHeader
-          />
+          />  
         </div>
       </div>
       {!chartLoaded && <Loading />}
       {chartLoaded && !view && (
         <GridLayout>
           <GridRow>
-            <GridColumn xs={12} md={12} lg={8}>
+            <GridColumn xs={12} md={12} lg={8} className={styles.mapbox}>
               <ChinaMap data={countryData} />
             </GridColumn>
             <GridColumn xs={12} md={12} lg={4}>
